@@ -1,10 +1,17 @@
+######################################################
+### Library: Random                                ###
+### Version: 1.00                                  ###
+### Datum  : 05.09.2025                            ###
+######################################################
+from random import randint
 
+
+def random_int(start=0, stop=100):
+    x = randint(start, stop)
+    return x
 
 def main():
-    state = 'RUN'
-    plc = PLC()
-    print(plc.set_state(state))
-    #plc.cycle()
+    print(random_int(0,10))
 
 # ###############################################################################
 # ### Main                                                                    ###
