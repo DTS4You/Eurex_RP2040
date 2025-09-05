@@ -45,6 +45,7 @@ class Ledsegment:
         self.color_half = (0,0,0)
         self.color_show = (0,0,0)
         self.color_value = (0,0,0)
+        self.bright = 255
 
     def set_color_on(self, color_on):
         self.color_on = color_on
@@ -70,12 +71,16 @@ class Ledsegment:
     def set_color_half(self, color_value):
         self.color_half = color_value
 
-    def set_pixel(self, pixel_num, color=None):
+    def set_pixel(self, pixel_num, color=None, bright=None):
         if color:
             self.color_value = color
         else:
             self.color_value = self.color_show
-        self.neopixel.set_pixel(self.start + pixel_num, self.color_value)
+        if bright:
+            self.bright = bright
+        else:
+            self.bright = 255
+        self.neopixel.set_pixel(self.start + pixel_num, self.color_value, self.bright)
 
     def show_on(self):
         self.color_show = self.color_on
@@ -107,6 +112,9 @@ class Ledsegment:
 
     def get_blink_state(self):
         return self.blink_state
+
+    def rotate(self, num):
+        self.neopixel.rotate_right(num)
 
     def set_line(self):
         self.neopixel.set_pixel_line(self.start, self.stop, self.color_show)
@@ -351,6 +359,12 @@ def set_led_obj(obj,state):
         led_obj[obj].show_blink()
     do_refresh()
 
+def set_pixel_obj(obj, pixel, color, bright):
+    led_obj[obj].set_pixel(pixel, color, bright)
+
+def rotate_obj(obj,num=1):
+    led_obj[obj].rotate(num)
+
 # -----------------------------------------------------------------------------
 
 def main():
@@ -360,22 +374,27 @@ def main():
     print("WS2812 -> Setup")
     setup_ws2812()
         
-    print("WS2812 -> Run self test")
-    self_test()
+    #print("WS2812 -> Run self test")
+    #self_test()
     
     #print("WS2812 -> Test -> LED")
     #test_led(0,0)
 
-    print("WS2812 -> Object Test")
-    do_obj_on_off_def_off()
+    #print("WS2812 -> Object Test")
+    #do_obj_on_off_def_off()
 
     #print("WS2812 -> LED-Dot-Test")
     #do_dot_test()
 
-    print("WS2812 -> Segment-Blink")
-    do_blink_test()
-        
+    #print("WS2812 -> Segment-Blink")
+    #do_blink_test()
     
+    print("WS2812 Set Pixel")
+    set_pixel_obj(0,0,(120,120,120),255)
+    do_refresh()
+    time.sleep(0.5)
+    rotate_obj(0)
+    do_refresh()
 
     print("WS2812 -> End of Program !!!")
 
