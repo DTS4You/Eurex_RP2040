@@ -5,12 +5,13 @@
 ### Datum  : 05.09.2025                            ###
 ######################################################
 #from machine import Pin, Timer                              # type: ignore
+from random import randint # type: ignore
 from libs.module_init import Global_Module as MyModule
 import time                                                 # type: ignore
 
 time_on    = 0.3
 time_off   = 0.4
-time_pause = 1.5
+time_pause = 0.3
 
 # ------------------------------------------------------------------------------
 # --- Main Function                                                          ---
@@ -19,12 +20,18 @@ time_pause = 1.5
 def main():
 
     print("=== Start Main ===")
+    MyWS2812.setup_ws2812()
     
+    MyWS2812.set_pixel_obj(0,0,(120,120,120),255)
+    MyWS2812.do_refresh()
+
     try:
         print("Start Main Loop")
  
         while (True):
-            
+            MyWS2812.set_pixel_obj(0,0,(50,100,255),randint(0,255))
+            MyWS2812.rotate_obj(0)
+            MyWS2812.do_refresh()
             time.sleep(time_pause)
 
     except KeyboardInterrupt:

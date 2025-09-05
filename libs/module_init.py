@@ -5,12 +5,12 @@
 
 class Global_Module:
     
-    inc_ws2812          = False
+    inc_ws2812          = True
     inc_decoder         = False
     inc_serial          = False
     inc_i2c             = False
-    inc_plc             = True
-    inc_random          = True
+    inc_plc             = False
+    inc_random          = False
 
 class Global_WS2812:
 
