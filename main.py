@@ -93,6 +93,13 @@ if __name__ == "__main__":
     else:
         print("Serial-COM -> nicht vorhanden")
 
+    if MyModule.inc_random:
+        print("Random -> Load-Module")
+        import libs.module_random as MyRandom
+        print(MyRandom.random_int())
+    else:
+        print("Random -> nicht vorhanden")
+
     main()      # Start Main $$$
 
 # Normal sollte das Programm hier nie ankommen !
