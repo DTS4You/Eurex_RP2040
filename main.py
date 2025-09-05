@@ -96,7 +96,7 @@ if __name__ == "__main__":
     if MyModule.inc_random:
         print("Random -> Load-Module")
         import libs.module_random as MyRandom
-        print(MyRandom.random_int())
+        #print(MyRandom.random_int())
     else:
         print("Random -> nicht vorhanden")
 
