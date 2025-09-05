@@ -134,20 +134,20 @@ def setup_ws2812():
     strip_obj.append(module_neopixel.Neopixel(mg.numpix_1, 0, 2, "GRB"))
     strip_obj.append(module_neopixel.Neopixel(mg.numpix_2, 1, 3, "GRB"))
     strip_obj.append(module_neopixel.Neopixel(mg.numpix_3, 2, 4, "GRB"))
-    strip_obj.append(module_neopixel.Neopixel(mg.numpix_4, 3, 5, "GRB"))
-    strip_obj.append(module_neopixel.Neopixel(mg.numpix_5, 4, 6, "GRB"))
-    strip_obj.append(module_neopixel.Neopixel(mg.numpix_6, 5, 7, "GRB"))
+    #strip_obj.append(module_neopixel.Neopixel(mg.numpix_4, 3, 5, "GRB"))
+    #strip_obj.append(module_neopixel.Neopixel(mg.numpix_5, 4, 6, "GRB"))
+    #strip_obj.append(module_neopixel.Neopixel(mg.numpix_6, 5, 7, "GRB"))
     
     # =========================================================================
 
-    led_obj.append(Ledsegment(strip_obj[mg.seg_01_strip], mg.seg_01_start, mg.seg_01_count))      #  ( 0) -> LED Boden 1
-    led_obj.append(Ledsegment(strip_obj[mg.seg_02_strip], mg.seg_02_start, mg.seg_02_count))      #  ( 1) -> LED Boden 2
-    led_obj.append(Ledsegment(strip_obj[mg.seg_03_strip], mg.seg_03_start, mg.seg_03_count))      #  ( 2) -> LED Boden 3
-    led_obj.append(Ledsegment(strip_obj[mg.seg_04_strip], mg.seg_04_start, mg.seg_04_count))      #  ( 3) -> LED Boden 4
-    led_obj.append(Ledsegment(strip_obj[mg.seg_05_strip], mg.seg_05_start, mg.seg_05_count))      #  ( 4) -> LED Boden 5
-    led_obj.append(Ledsegment(strip_obj[mg.seg_06_strip], mg.seg_06_start, mg.seg_06_count))      #  ( 5) -> LED Spiegel
-    led_obj.append(Ledsegment(strip_obj[mg.seg_07_strip], mg.seg_07_start, mg.seg_07_count))      #  ( 6) -> LED Laser
-    led_obj.append(Ledsegment(strip_obj[mg.seg_08_strip], mg.seg_08_start, mg.seg_08_count))      #  ( 7) -> LED Empfänger
+    led_obj.append(Ledsegment(strip_obj[mg.seg_01_strip], mg.seg_01_start, mg.seg_01_count))      #  ( 0) -> Smooker 1
+    led_obj.append(Ledsegment(strip_obj[mg.seg_02_strip], mg.seg_02_start, mg.seg_02_count))      #  ( 1) -> Smooker 2
+    led_obj.append(Ledsegment(strip_obj[mg.seg_03_strip], mg.seg_03_start, mg.seg_03_count))      #  ( 2) -> Smooker 3
+    # led_obj.append(Ledsegment(strip_obj[mg.seg_04_strip], mg.seg_04_start, mg.seg_04_count))      #  ( 3) -> LED Boden 4
+    # led_obj.append(Ledsegment(strip_obj[mg.seg_05_strip], mg.seg_05_start, mg.seg_05_count))      #  ( 4) -> LED Boden 5
+    # led_obj.append(Ledsegment(strip_obj[mg.seg_06_strip], mg.seg_06_start, mg.seg_06_count))      #  ( 5) -> LED Spiegel
+    # led_obj.append(Ledsegment(strip_obj[mg.seg_07_strip], mg.seg_07_start, mg.seg_07_count))      #  ( 6) -> LED Laser
+    # led_obj.append(Ledsegment(strip_obj[mg.seg_08_strip], mg.seg_08_start, mg.seg_08_count))      #  ( 7) -> LED Empfänger
     # led_obj.append(Ledsegment(strip_obj[mg.seg_09_strip], mg.seg_09_start, mg.seg_09_count))      #  2, 2  (09) -> LED Position -> # 09 #
     # led_obj.append(Ledsegment(strip_obj[mg.seg_10_strip], mg.seg_10_start, mg.seg_10_count))      #  3, 0  (10) -> LED Position -> # 10 #
     # led_obj.append(Ledsegment(strip_obj[mg.seg_11_strip], mg.seg_11_start, mg.seg_11_count))      #  3, 1  (11) -> LED Position -> # 11 #

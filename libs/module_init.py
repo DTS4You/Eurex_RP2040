@@ -14,43 +14,25 @@ class Global_Module:
 
 class Global_WS2812:
 
-    numpix_1            = 16            # Anz. LEDs im 1. Stripe -> Boden 1
-    numpix_2            = 16            # Anz. LEDs im 2. Stripe -> Boden 2
-    numpix_3            = 16            # Anz. LEDs im 3. Stripe -> Boden 3
-    numpix_4            = 16            # Anz. LEDs im 4. Stripe -> Boden 4
-    numpix_5            = 16            # Anz. LEDs im 5. Stripe -> Boden 5
-    # Gesamtzahl ermitteln !!!
-    # Spiegel   = 68 + 241 = 309
-    # Spiegel   = 241               ohne Rand !!!
-    # Laser     = 23
-    # Empfänger = 16
-    # Summe     : 280 LEDs
-    numpix_6            = 320           # Anz. LEDs im 6. Stripe -> Spiegel, Laser, Empfänger
-    #numpix_1           = 256           # Anz. LEDs im 1. Stripe -> Test !!!
-
-    #seg_01_strip        = 0             #  1. Seg -> Stripe      # 0 -> Spiegel -> Ring
-    #seg_01_start        = 0             #  1. Seg -> Start
-    #seg_01_count        = 68            #  1. Seg -> Anzahl
-
-    #seg_02_strip        = 0             #  2. Seg -> Stripe      # 1 -> Laser Sender
-    #seg_02_start        = 68            #  2. Seg -> Start
-    #seg_02_count        = 23            #  2. Seg -> Anzahl
-
-    #seg_03_strip        = 0             #  3. Seg -> Stripe      # 2 -> Laser Empfänger
-    #seg_03_start        = 91            #  3. Seg -> Start
-    #seg_03_count        = 16            #  3. Seg -> Anzahl
-    
+    numpix_1            = 16            # Anz. LEDs im 1. Stripe -> Smooker 1
+    numpix_2            = 16            # Anz. LEDs im 2. Stripe -> Smooker 2
+    numpix_3            = 16            # Anz. LEDs im 3. Stripe -> Smooker 3
+    #numpix_4            = 16            # Anz. LEDs im 4. Stripe -> Boden 4
+    #numpix_5            = 16            # Anz. LEDs im 5. Stripe -> Boden 5
+    #numpix_6            = 20           # Anz. LEDs im 6. Stripe -> Spiegel, Laser, Empfänger
+    #numpix_7            = 20
+    #numpix_8            = 20
     #--------------------------------------------------------------------------
 
-    seg_01_strip        = 0             #  1. Seg -> Stripe      # 0 -> Boden 1
+    seg_01_strip        = 0             #  1. Seg -> Stripe      # 0 -> Smooker 1
     seg_01_start        = 0             #  1. Seg -> Start
     seg_01_count        = 16            #  1. Seg -> Anzahl
 
-    seg_02_strip        = 1             #  2. Seg -> Stripe      # 1 -> Boden 2
+    seg_02_strip        = 1             #  2. Seg -> Stripe      # 1 -> Smooker 2
     seg_02_start        = 0             #  2. Seg -> Start
     seg_02_count        = 16            #  2. Seg -> Anzahl
 
-    seg_03_strip        = 2             #  3. Seg -> Stripe      # 2 -> Boden 3
+    seg_03_strip        = 2             #  3. Seg -> Stripe      # 2 -> Smooker 3
     seg_03_start        = 0             #  3. Seg -> Start
     seg_03_count        = 16            #  3. Seg -> Anzahl
 
