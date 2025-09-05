@@ -1,5 +1,6 @@
 # Module WS2812 V1.01
 import time # type: ignore
+from random import randint # type: ignore
 import libs.module_neopixel as module_neopixel
 from libs.module_init import Global_WS2812 as MyGlobal
 
@@ -393,8 +394,11 @@ def main():
     set_pixel_obj(0,0,(120,120,120),255)
     do_refresh()
     time.sleep(0.5)
-    rotate_obj(0)
-    do_refresh()
+    for x in range(100):
+        set_pixel_obj(0,0,(50,100,255),randint(0,255))
+        rotate_obj(0)
+        do_refresh()
+        time.sleep(0.3)
 
     print("WS2812 -> End of Program !!!")
 
