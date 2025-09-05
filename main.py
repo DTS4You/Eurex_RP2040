@@ -9,10 +9,10 @@ from random import randint # type: ignore
 from libs.module_init import Global_Module as MyModule
 import time                                                 # type: ignore
 
-time_on    = 0.3
-time_off   = 0.4
 pixel_color = (250,230,10)
 time_pause = 0.1
+rand_min = 0
+rand_max = 170
 
 # ------------------------------------------------------------------------------
 # --- Main Function                                                          ---
@@ -32,9 +32,9 @@ def main():
         print("Start Main Loop")
  
         while (True):
-            MyWS2812.set_pixel_obj(0, 0, pixel_color, randint(0,170))
-            MyWS2812.set_pixel_obj(1, 0, pixel_color, randint(0,170))
-            MyWS2812.set_pixel_obj(2, 0, pixel_color, randint(0,170))
+            MyWS2812.set_pixel_obj(0, 0, pixel_color, randint(rand_min, rand_max))
+            MyWS2812.set_pixel_obj(1, 0, pixel_color, randint(rand_min, rand_max))
+            MyWS2812.set_pixel_obj(2, 0, pixel_color, randint(rand_min, rand_max))
             MyWS2812.rotate_obj(0)
             MyWS2812.rotate_obj(1)
             MyWS2812.rotate_obj(2)
