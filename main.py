@@ -11,7 +11,8 @@ import time                                                 # type: ignore
 
 time_on    = 0.3
 time_off   = 0.4
-time_pause = 0.3
+pixel_color = (250,230,10)
+time_pause = 0.1
 
 # ------------------------------------------------------------------------------
 # --- Main Function                                                          ---
@@ -22,15 +23,21 @@ def main():
     print("=== Start Main ===")
     MyWS2812.setup_ws2812()
     
-    MyWS2812.set_pixel_obj(0,0,(120,120,120),255)
+    MyWS2812.set_pixel_obj(0,0,(120,120,120),10)
+    MyWS2812.set_pixel_obj(1,0,(120,120,120),10)
+    MyWS2812.set_pixel_obj(2,0,(120,120,120),10)
     MyWS2812.do_refresh()
 
     try:
         print("Start Main Loop")
  
         while (True):
-            MyWS2812.set_pixel_obj(0,0,(50,100,255),randint(0,255))
+            MyWS2812.set_pixel_obj(0, 0, pixel_color, randint(0,170))
+            MyWS2812.set_pixel_obj(1, 0, pixel_color, randint(0,170))
+            MyWS2812.set_pixel_obj(2, 0, pixel_color, randint(0,170))
             MyWS2812.rotate_obj(0)
+            MyWS2812.rotate_obj(1)
+            MyWS2812.rotate_obj(2)
             MyWS2812.do_refresh()
             time.sleep(time_pause)
 
