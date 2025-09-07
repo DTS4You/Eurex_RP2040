@@ -63,10 +63,13 @@ if __name__ == "__main__":
         #print("I2C -> Setup")
         MyGPIO.i2c_setup()
         ### Test ###
-        print("I2C -> SetOutput")
-        MyGPIO.i2c_write(0,True)
-        time.sleep(0.5)
-        MyGPIO.i2c_write(0,False)
+        print("I2C -> SelfTest")
+        for i in range(0,8):
+            MyGPIO.i2c_write(i, True)
+            time.sleep(0.3)
+        for i in range(0,8):
+            MyGPIO.i2c_write(i, False)
+            time.sleep(0.3)
     else:
         print("I2C_MCP23017 -> nicht vorhanden")
 
