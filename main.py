@@ -4,7 +4,7 @@
 ### Version: 1.00                                  ###
 ### Datum  : 05.09.2025                            ###
 ######################################################
-#from machine import Pin, Timer                              # type: ignore
+from machine import Timer                              # type: ignore
 from random import randint # type: ignore
 from libs.module_init import Global_Module as MyModule
 import time                                                 # type: ignore
@@ -13,6 +13,44 @@ pixel_color = (250,230,10)
 time_pause = 0.1
 rand_min = 0
 rand_max = 170
+time_next_uboot = 5000
+x = 0
+
+def timer_1_CallBack(t):
+    #print("Timer 1 Int.")
+    update_leds()
+
+def update_leds():
+    global x
+    if x == 0:
+        MyGPIO.i2c_write(0, False)
+        MyGPIO.i2c_write(1, False)
+        MyGPIO.i2c_write(2, False)
+        MyGPIO.i2c_write(3, False)
+    if x == 1:
+        MyGPIO.i2c_write(0, True)
+        MyGPIO.i2c_write(1, False)
+        MyGPIO.i2c_write(2, False)
+        MyGPIO.i2c_write(3, False)
+    if x == 2:
+        MyGPIO.i2c_write(0, False)
+        MyGPIO.i2c_write(1, True)
+        MyGPIO.i2c_write(2, False)
+        MyGPIO.i2c_write(3, False)
+    if x == 3:
+        MyGPIO.i2c_write(0, False)
+        MyGPIO.i2c_write(1, False)
+        MyGPIO.i2c_write(2, True)
+        MyGPIO.i2c_write(3, False)
+    if x == 4:
+        MyGPIO.i2c_write(0, False)
+        MyGPIO.i2c_write(1, False)
+        MyGPIO.i2c_write(2, False)
+        MyGPIO.i2c_write(3, True)
+    if x < 4:
+        x = x + 1
+    else:
+        x = 0
 
 # ------------------------------------------------------------------------------
 # --- Main Function                                                          ---
@@ -21,7 +59,12 @@ rand_max = 170
 def main():
 
     print("=== Start Main ===")
-    MyWS2812.setup_ws2812()
+    # periodic with 100ms period
+    
+    timer = Timer(period=time_next_uboot, mode=Timer.PERIODIC, callback=timer_1_CallBack)
+    
+    #MyWS2812.setup_ws2812()
+    #MyGPIO.i2c_setup()
     
     MyWS2812.set_pixel_obj(0,0,(120,120,120),10)
     MyWS2812.set_pixel_obj(1,0,(120,120,120),10)
