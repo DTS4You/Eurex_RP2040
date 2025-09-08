@@ -131,28 +131,6 @@ if __name__ == "__main__":
     else:
         print("WS2812 -> nicht vorhanden")
 
-    if MyModule.inc_decoder:
-        print("Decode -> Load-Module")
-        import libs.module_decode as MyDecode
-        #print("Decode -> Setup")
-        MyDecode.decode_setup()
-        ### Test ###
-        #print("Decode -> Test")
-        #MyDecode.decode_input("Test")
-    else:
-        print("Decode -> nicht vorhanden")
-
-    if MyModule.inc_serial:
-        print("Serial-COM -> Load-Module")
-        import libs.module_serial as MySerial
-        #print("Serial-Con -> Setup")
-        MySerial.sercon_setup()
-        ### Test ###
-        #print("Serial-Con -> Test")
-        #MySerial.sercon_write_out("Start Test")
-    else:
-        print("Serial-COM -> nicht vorhanden")
-
     if MyModule.inc_random:
         print("Random -> Load-Module")
         import libs.module_random as MyRandom
