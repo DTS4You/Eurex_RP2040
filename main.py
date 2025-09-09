@@ -22,6 +22,7 @@ def timer_1_CallBack(t):
 
 def update_leds():
     global x
+    #print(x)
     if x == 0:
         MyGPIO.i2c_write(0, True)
         MyGPIO.i2c_write(1, True)
@@ -65,7 +66,11 @@ def main():
     
     #MyWS2812.setup_ws2812()
     #MyGPIO.i2c_setup()
-    
+    MyGPIO.i2c_write(0, True)
+    MyGPIO.i2c_write(1, True)
+    MyGPIO.i2c_write(2, True)
+    MyGPIO.i2c_write(3, True)
+
     MyWS2812.set_pixel_obj(0,0,(120,120,120),10)
     MyWS2812.set_pixel_obj(1,0,(120,120,120),10)
     MyWS2812.set_pixel_obj(2,0,(120,120,120),10)
