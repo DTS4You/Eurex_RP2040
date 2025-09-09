@@ -23,30 +23,30 @@ def timer_1_CallBack(t):
 def update_leds():
     global x
     if x == 0:
-        MyGPIO.i2c_write(0, False)
-        MyGPIO.i2c_write(1, False)
-        MyGPIO.i2c_write(2, False)
-        MyGPIO.i2c_write(3, False)
-    if x == 1:
         MyGPIO.i2c_write(0, True)
-        MyGPIO.i2c_write(1, False)
-        MyGPIO.i2c_write(2, False)
-        MyGPIO.i2c_write(3, False)
-    if x == 2:
+        MyGPIO.i2c_write(1, True)
+        MyGPIO.i2c_write(2, True)
+        MyGPIO.i2c_write(3, True)
+    if x == 1:
         MyGPIO.i2c_write(0, False)
         MyGPIO.i2c_write(1, True)
-        MyGPIO.i2c_write(2, False)
-        MyGPIO.i2c_write(3, False)
-    if x == 3:
-        MyGPIO.i2c_write(0, False)
+        MyGPIO.i2c_write(2, True)
+        MyGPIO.i2c_write(3, True)
+    if x == 2:
+        MyGPIO.i2c_write(0, True)
         MyGPIO.i2c_write(1, False)
         MyGPIO.i2c_write(2, True)
-        MyGPIO.i2c_write(3, False)
-    if x == 4:
-        MyGPIO.i2c_write(0, False)
-        MyGPIO.i2c_write(1, False)
+        MyGPIO.i2c_write(3, True)
+    if x == 3:
+        MyGPIO.i2c_write(0, True)
+        MyGPIO.i2c_write(1, True)
         MyGPIO.i2c_write(2, False)
         MyGPIO.i2c_write(3, True)
+    if x == 4:
+        MyGPIO.i2c_write(0, True)
+        MyGPIO.i2c_write(1, True)
+        MyGPIO.i2c_write(2, True)
+        MyGPIO.i2c_write(3, False)
     if x < 4:
         x = x + 1
     else:
