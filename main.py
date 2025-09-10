@@ -20,35 +20,46 @@ def timer_1_CallBack(t):
     #print("Timer 1 Int.")
     update_leds()
 
+def led_all_off():
+    MyGPIO.i2c_write(0, True)
+    MyGPIO.i2c_write(1, True)
+    MyGPIO.i2c_write(2, True)
+    MyGPIO.i2c_write(3, True)
+
 def update_leds():
     global x
     #print(x)
     if x == 0:
-        MyGPIO.i2c_write(0, True)
-        MyGPIO.i2c_write(1, True)
-        MyGPIO.i2c_write(2, True)
-        MyGPIO.i2c_write(3, True)
+        led_all_off()
     if x == 1:
         MyGPIO.i2c_write(0, False)
         MyGPIO.i2c_write(1, True)
         MyGPIO.i2c_write(2, True)
         MyGPIO.i2c_write(3, True)
     if x == 2:
+        led_all_off()
+    if x == 3:
         MyGPIO.i2c_write(0, True)
         MyGPIO.i2c_write(1, False)
         MyGPIO.i2c_write(2, True)
         MyGPIO.i2c_write(3, True)
-    if x == 3:
+    if x == 4:
+        led_all_off()
+    if x == 5:
         MyGPIO.i2c_write(0, True)
         MyGPIO.i2c_write(1, True)
         MyGPIO.i2c_write(2, False)
         MyGPIO.i2c_write(3, True)
-    if x == 4:
+    if x == 6:
+        led_all_off()
+    if x == 7:
         MyGPIO.i2c_write(0, True)
         MyGPIO.i2c_write(1, True)
         MyGPIO.i2c_write(2, True)
         MyGPIO.i2c_write(3, False)
-    if x < 4:
+    if x > 7:
+        led_all_off()
+    if x < 7:
         x = x + 1
     else:
         x = 0
