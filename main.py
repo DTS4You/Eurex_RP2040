@@ -13,7 +13,7 @@ pixel_color = (250,230,10)
 time_pause = 0.1
 rand_min = 0
 rand_max = 170
-time_next_uboot = 5000
+time_next_uboot = 8000
 x = 0
 
 def timer_1_CallBack(t):

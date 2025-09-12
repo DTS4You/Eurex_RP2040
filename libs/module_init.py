@@ -14,9 +14,9 @@ class Global_Module:
 
 class Global_WS2812:
 
-    numpix_1            = 16            # Anz. LEDs im 1. Stripe -> Smooker 1
-    numpix_2            = 16            # Anz. LEDs im 2. Stripe -> Smooker 2
-    numpix_3            = 16            # Anz. LEDs im 3. Stripe -> Smooker 3
+    numpix_1            = 32            # Anz. LEDs im 1. Stripe -> Smooker 1
+    numpix_2            = 32            # Anz. LEDs im 2. Stripe -> Smooker 2
+    numpix_3            = 32            # Anz. LEDs im 3. Stripe -> Smooker 3
     #numpix_4            = 16            # Anz. LEDs im 4. Stripe -> Boden 4
     #numpix_5            = 16            # Anz. LEDs im 5. Stripe -> Boden 5
     #numpix_6            = 20           # Anz. LEDs im 6. Stripe -> Spiegel, Laser, Empfänger
